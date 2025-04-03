@@ -42,7 +42,7 @@ include_once('header.php') ?>
         <?php $total = 0; ?>
         <?php foreach ($_SESSION['kosar'] as $id => $quantity): ?>
             <li>
-                <?php echo $products[$id]['name']; ?> - <?php echo $quantity; ?> db - <?php echo $products[$id]['price'] * $quantity; ?>, Ft
+                <?php echo htmlspecialchars($products[$id]['name']); ?> - <?php echo $quantity; ?> db - <?php echo $products[$id]['price'] * $quantity; ?>, Ft
                 <a href="kosar.php?remove=<?php echo $id; ?>">Törlés</a>
             </li>
             <?php $total += $products[$id]['price'] * $quantity; ?>
